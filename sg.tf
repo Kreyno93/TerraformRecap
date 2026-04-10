@@ -36,12 +36,9 @@ resource "aws_vpc_security_group_ingress_rule" "wordpress-mysql" {
   to_port     = 3306
 }
 
-
-resource "aws_vpc_security_group_egress_rule" "wordpress-all-traffic" {
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4_ssh" {
   security_group_id = aws_security_group.wordpress-sg.id
-
-  cidr_ipv4   = "0.0.0.0/0"
-  from_port   = -1
-  ip_protocol = "tcp"
-  to_port     = -1
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1"
 }
+

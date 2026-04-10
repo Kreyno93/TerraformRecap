@@ -3,8 +3,9 @@ resource "aws_instance" "wordpress_instance" {
   instance_type               = "t3.micro"
   associate_public_ip_address = true
   key_name                    = "vockey"
-  security_groups             = []
+  vpc_security_group_ids      = [aws_security_group.wordpress-sg.id]
   subnet_id                   = aws_subnet.public_subnet.id
+
   tags = {
     Name = "Wordpress-Instance"
   }
