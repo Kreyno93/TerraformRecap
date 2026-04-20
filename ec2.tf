@@ -11,7 +11,7 @@ resource "aws_instance" "wordpress_instance" {
   }
 }
 
-resource "aws_instance" "wordpress_instance" {
+resource "aws_instance" "wordpress_instance_2" {
   ami                         = "ami-0a914de4dc1f18727"
   instance_type               = "t3.small"
   associate_public_ip_address = true
